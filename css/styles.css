@@ -146,36 +146,43 @@ td:first-child, th:first-child {
 
 /*---History START---*/
 .history {
-    /* display: flex; */
+    display: flex;
     padding: 0% 6%;
 }
-
+h3 {
+    text-align: center;
+}
 .place {
     display:flex;
     width:100%;
-    /* flex-direction: column; */
 }
 
 .place img {
     width:100%;
     aspect-ratio: 4 / 3 ;
+    max-width: 225px;
     max-height: 210px;
     height: auto;
+    float: right;
+    margin: 0.4em;
+    box-shadow: 0px 0px 5px 3px lightgrey;
 }
 
 .one,.two,.three {
-    display: flex;
+    /* display: flex; */
     width:33.33%;
+    padding-right: 1em;
 }
 
-.facts {
+/* .facts {
     float:left;
-}
+} */
 /*---History END---*/
 
+/*---Media Queries START---*/
 
-/* When the screen size is less than 499px */
 @media(min-width:100px) and (max-width:499px){
+    /* When the screen size is less than 499px */
     .header{
         display:none;
     }
@@ -183,22 +190,16 @@ td:first-child, th:first-child {
         display: flex;
         flex-direction: row;
     }
-    
-    /* .info-left{
-        margin: 0 auto;
-        font-size: small;
-    } */
 
     .info-right {
         margin: 0 auto;
     }
-
-    .menu {
-        display: flex;
-    }
 }
 
 @media(min-width:500px) and (max-width:969px){
+    /* When the screen size is between 500px and 969px */
+
+    /* info section styling */
     .info {
         display: flex;
         flex-direction: row;
@@ -213,25 +214,54 @@ td:first-child, th:first-child {
         margin: 0 auto;
         padding: 1em 6em;
     }
+    /* City section styling */
     .city {
         display: flex;
     }
+
     .city-left img{
         min-width: 293px;
     }
+
     figcaption {
         width:15em;
     }
+
     .city-right{
         margin: 0em;
         display:inline-block;
     }
-    .menu {
-        display: flex;
+    /* History section styling */
+    .place {
+        display:block;
+        width:100%;
+    }
+
+    .place img {
+        width:100%;
+        aspect-ratio: 4 / 3 ;
+        max-width: 160px;
+        max-height: 210px;
+        height: auto;
+        float: right;
+        margin: 0.5em;
+        box-shadow: 0px 0px 5px 3px lightgrey;
+    }
+
+    .one, .two ,.three {
+        width:100%;
+        
+    }
+
+    .two img {
+    float: left;
     }
 }
 
 @media(min-width:970px){
+    /* When the screen size is 970px and larger */
+    
+    /* info section styling */
     .info {
         display: flex;
         flex-direction: row;
@@ -246,16 +276,9 @@ td:first-child, th:first-child {
         margin: 0 ;
         padding: 1em 5em;
     }
+    /* City section styling */
     .city-left {
         padding-right: 2%;
     }
-
-    .main-left {
-        float: left;
-        width: 25%;
-    }
-
-    .menu {
-        display: flex;
-    }
 }
+/*---Media Queries END---*/
