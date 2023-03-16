@@ -1,76 +1,77 @@
+/*---Basic styling START---*/
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 .container {
     width: 80%;
     margin: 0 auto;
     font-family: 'Varela Round', sans-serif;
-    color: crimson;
-    background-color: lightseagreen;
+    font-size: large;
+    color: darkturquoise;
+    background-color: dimgray;
 }
-
-/*.dark {
-    background-color: lightseagreen;
-}*/
 
 .light {
-    background-color: lightgreen;
-}
-/* Navigation start */
-nav{
-	list-style: none;
+    background-color: slategray;
 }
 
-header nav{
-	display: flex;
-    justify-content: flex-end;
-}
-
-header nav li{
-	margin: 5px 10px;
-}
-
-a{
-	text-decoration: none;
-	color: inherit;
-	cursor: pointer;
-
-	opacity: 0.9;
-}
-
-a:hover{
-	opacity: 1;
-}
-/* Navigation end */
-
-.infoHeading{
-    margin: 0 auto;
-    width: 89%;
-    padding-top: 1em;
+.content {
+    width:100%;
+    padding: 1em;
 }
 
 .sectionHeading {
     margin: 0 auto;
-    width:92%;
+    /*width:92%;*/
 }
+
+.clearfix {
+    overflow: auto;
+    zoom: 1;
+}
+/*---Basic styling END---*/
+
+/*---Navigation START---*/
+header nav{
+	display: flex; /* Ensure you can click anywhere in the li for the link */
+    justify-content: flex-end;
+    list-style: none; /* remove the list item dots*/
+}
+
+.navigation a {
+    padding: 0.5em;
+    display: block;
+    text-decoration: none;
+	color: inherit;
+}
+
+a:hover{
+	cursor: pointer;
+}
+
+/* Change the menu color to slategrey when hovering over a link*/
+.navigation a:hover {
+    background-color: slategrey;
+}
+/*---Navigation END---*/
+
+/*---Info START---*/
 .info {
     /* image sourced from https://www.needpix.com/photo/download/844735/ */
     background-image: url('../images/table-mountain_resized.jpg'); /* Author: nike159 (pixbay.com) */
-    /*display: flex;*/
     background-position: center center;
 	background-size: cover;
-    padding: 1em;
+    display: flex;
+    flex-direction: row;
 }
+
 .info-left {
-    display: inline-flex;
-    width: 75%;
-    padding: 1em;
+    float: left;
+    padding: 6%;
 }
+
 .info-right {
     float: right;
-    width: 25%;
-    padding: 1em;
-    text-align: center;
-    border-radius: 5%;
+    padding: 1em 6%;
 }
 
 .info-right img {
@@ -81,100 +82,112 @@ a:hover{
     height: auto;
     box-shadow: 0px 0px 10px 5px lightgrey;
 }
+/*---Info END---*/
 
-.main-left {
-    float: left;
-    width: 50%;
-    padding: 1em;
+/*---Place START---*/
+.city {
+    display: flex;
+    flex-direction: row;
+    padding: 0% 6%;
 }
 
-.main-left img {
+.city-left {
+    float: left;
+    margin: 0em;
+    /*padding-right: 1%;*/
+    width: 35%;
+    padding: 1em 0em;
+}
+
+.city-left img {
     width: 100%;
     max-width: 420px;
     min-width: 150px;
     height: auto;
 }
 
+.city-right {
+    margin: 0.7em 0em;
+}
+/*---Place END---*/
+
+/*---Foreign Language START---*/
 figcaption {
     font-style: italic;
     font-size: small;
-  }
-
-.city {
-    margin: 0 auto;
-    /*width:95%;*/
 }
 
-.footer {
-    padding: 1em;
+.language {
+    display: flex;
+    padding: 0% 6%;
 }
+
 table {
-    border-collapse: collapse;
-    width: 95%;
-    margin: 1em;
-}
-table,th,td {
-    border: 1px solid darkslategray;
-    padding: 0.5em;
+    border-collapse:separate;
+    border:solid dimgray 1px;
+    border-radius:15px;
+    width: 100%;
+    margin: 0.5em 0em;
 }
 
-.clearfix {
-    overflow: auto;
-    zoom: 1;
+td, th {
+    border-left:solid dimgray 1px;
+    border-top:solid dimgray 1px;
 }
 
-.content {
-    padding: 1em;
+th {
+    border-top: none;
 }
 
-/* remove the list item dots*/
-.menu li{
-    list-style: none; 
-    margin: 0em;
-    padding: 0em;
+td:first-child, th:first-child {
+     border-left: none;
 }
-/* Ensure you can click anywhere in the li for the link */
-.menu a {
-    padding: 1em;
-    display: block;
-    width: 6em;
+/*---Foreign Language END---*/
+
+/*---History START---*/
+.history {
+    /* display: flex; */
+    padding: 0% 6%;
 }
-/* Change the menu color to darker green when hovering over a link*/
-.menu a:hover {
-    background-color: lightgreen;
+
+.place {
+    display:flex;
+    width:100%;
+    /* flex-direction: column; */
 }
-/* When the screen size is less than 400px */
-@media(min-width:100px) and (max-width:400px){
+
+.place img {
+    width:100%;
+    aspect-ratio: 4 / 3 ;
+    max-height: 210px;
+    height: auto;
+}
+
+.one,.two,.three {
+    display: flex;
+    width:33.33%;
+}
+
+.facts {
+    float:left;
+}
+/*---History END---*/
+
+
+/* When the screen size is less than 499px */
+@media(min-width:100px) and (max-width:499px){
     .header{
         display:none;
     }
     .info {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
     
-    .info-left{
+    /* .info-left{
         margin: 0 auto;
         font-size: small;
-    }
-
-    .info-right {
-        margin: 0 auto;
-    }
-
-    .menu {
-        display: flex;
-    }
-}
-@media(min-width:400px){
-    .info {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .info-left{
-        margin: 0 auto;
-    }
+    } */
 
     .info-right {
         margin: 0 auto;
@@ -185,11 +198,58 @@ table,th,td {
     }
 }
 
-@media(min-width:800px){
+@media(min-width:500px) and (max-width:969px){
     .info {
         display: flex;
         flex-direction: row;
     }
+    
+    .info-left{
+        margin: auto auto;
+        padding: 0em 4.4em
+    }
+
+    .info-right {
+        margin: 0 auto;
+        padding: 1em 6em;
+    }
+    .city {
+        display: flex;
+    }
+    .city-left img{
+        min-width: 293px;
+    }
+    figcaption {
+        width:15em;
+    }
+    .city-right{
+        margin: 0em;
+        display:inline-block;
+    }
+    .menu {
+        display: flex;
+    }
+}
+
+@media(min-width:970px){
+    .info {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .info-left{
+        margin: 5em auto;
+        padding: 0em 4.4em
+    }
+
+    .info-right {
+        margin: 0 ;
+        padding: 1em 5em;
+    }
+    .city-left {
+        padding-right: 2%;
+    }
+
     .main-left {
         float: left;
         width: 25%;
