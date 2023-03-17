@@ -66,6 +66,10 @@ header nav{
     position: sticky;
     top: 0;
  }
+ li {
+    background-color: whitesmoke;
+    opacity: 0.8;
+ }
 .navigation a {
     padding: 0.5em;
     display: block;
@@ -79,7 +83,8 @@ a:hover{
 
 /* Change the menu color to slategrey when hovering over a link*/
 .navigation a:hover {
-    background-color: slategrey;
+    background-color: dimgrey;
+    box-shadow: 0px 0px 2px 2px slategrey;
 }
 /*---Navigation END---*/
 
