@@ -1,8 +1,11 @@
 /*---Basic styling START---*/
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-
+.body {
+    display: grid;
+    grid-template-columns: auto 0px; 
+}
 .container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     font-family: 'Varela Round', sans-serif;
     font-size: large;
@@ -28,6 +31,27 @@
     overflow: auto;
     zoom: 1;
 }
+
+.top {
+    --offset: 30px; 
+    float: right;
+    position: sticky;
+    bottom: 10px;      
+    margin-right: 4em; 
+    place-self: end;
+    margin-top: calc(100vh + var(--offset));
+  
+    /* visual styling */
+    text-decoration: none;
+    padding: 10px 22px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    color: #fff;
+    background: darkturquoise;
+    border-radius: 50%;
+    white-space: nowrap;
+  }
 /*---Basic styling END---*/
 
 /*---Navigation START---*/
@@ -36,7 +60,12 @@ header nav{
     justify-content: flex-end;
     list-style: none; /* remove the list item dots*/
 }
-
+/* makes the navigation elements stick to the top when the page scrolls down */
+ .header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+ }
 .navigation a {
     padding: 0.5em;
     display: block;
